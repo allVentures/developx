@@ -1,3 +1,4 @@
+import json
 import os
 
 from django.test import TestCase
@@ -6,6 +7,7 @@ from django.urls import reverse
 
 from developXapp.forms import CashAmount
 from developXapp.views import MainPage
+
 
 # clear console
 def cls():
@@ -50,6 +52,31 @@ class AccessMainPage(TestCase):
         self.assertEqual(str(MainPage.notes_delivery(-20.33)), 'InvalidArgumentException')
         self.assertEqual(str(MainPage.notes_delivery(1.44)), 'NoteUnavailableException')
         self.assertEqual(str(MainPage.notes_delivery(133)), 'NoteUnavailableException')
+
+
+class TestApi(TestCase):
+    def setUp(self):
+        self.user_client = Client()
+
+    def test_api(self):
+        response = self.user_client.get(reverse('notes_api'))
+        self.assertEqual(response.status_code, 200)
+
+        response = self.user_client.get("/api?amount=170")
+        result = json.loads(response.content)
+        self.assertEqual(result, {"notes": "[100, 50, 20]"})
+
+        response = self.user_client.get("/api?amount=10")
+        result = json.loads(response.content)
+        self.assertEqual(result, {"notes": "[10]"})
+
+        response = self.user_client.get("/api?amount=-10")
+        result = json.loads(response.content)
+        self.assertEqual(result, {"notes": "InvalidArgumentException"})
+
+        response = self.user_client.get("/api?amount=12.22")
+        result = json.loads(response.content)
+        self.assertEqual(result, {"notes": "NoteUnavailableException"})
 
 
 # run tests => python3 manage.py test
