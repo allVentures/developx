@@ -8,7 +8,6 @@ class MainPage(View):
     @staticmethod
     def notes_delivery(amount):
         avilable_notes = [10, 20, 50, 100]
-        print("amount:",amount)
         try:
             if amount == None:
                 raise Exception([])
