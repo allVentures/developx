@@ -24,6 +24,7 @@ SECRET_KEY = 'tit#(z8bs(ht6_l08=gsfisl8_36sz-wvqbb=blo2*&4o_86s3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+CORS_ORIGIN_ALLOW_ALL = True
 
 ALLOWED_HOSTS = []
 
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'developXapp',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +50,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'developX.urls'
@@ -128,3 +132,4 @@ STATIC_ROOT = 'developX/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'developX/media/'
+

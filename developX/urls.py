@@ -16,9 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.urls import path, re_path
 from django.contrib import admin
-from developXapp.views import MainPage
+from developXapp.views import MainPage, NotesAPI
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$', MainPage.as_view(), name="main_page"),
+    url(r'^api', NotesAPI.as_view(), name="notes_api"),
 ]

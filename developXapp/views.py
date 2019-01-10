@@ -1,3 +1,6 @@
+from json import dumps
+
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
 
@@ -17,7 +20,7 @@ class MainPage(View):
                 raise Exception("NoteUnavailableException")
             sub_amount = amount
             notes = []
-            x = len(avilable_notes)-1
+            x = len(avilable_notes) - 1
             while sub_amount > 0:
                 while x >= 0:
                     while sub_amount >= avilable_notes[x]:
@@ -46,3 +49,19 @@ class MainPage(View):
             msg = "Form invalid, please try again!"
             ctx = {"form": form, "msg": msg}
             return render(request, "main_page.html", ctx)
+
+
+# very simple API
+class NotesAPI(View):
+    def get(self, request):
+        amount = request.GET.get('amount')
+        if amount != None:
+            try:
+                notes = str(MainPage.notes_delivery(float(amount)))
+            except ValueError:
+                notes = "ValueError"
+            response_data = {"notes": notes}
+            return HttpResponse(dumps(response_data), content_type="application/json")
+        else:
+            ctx = {}
+            return render(request, "api.html", ctx)
