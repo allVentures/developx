@@ -27,13 +27,6 @@ body {
     width: 100%;
 }
 
-.formNumbers {
-    width: 90px;
-}
-
-.shortFormsFields {
-    width: 50%;
-}
 
 #logo {
     font-family: 'Lato', sans-serif;
@@ -55,15 +48,6 @@ body {
     background-color: whitesmoke;
 }
 
-table {
-    table-layout: fixed;
-    word-wrap: break-word;
-}
-
-
-.centerTableCol {
-    text-align: center;
-}
 
 .h3Colors {
     background-color: #004a99;
@@ -71,48 +55,6 @@ table {
     padding: 10px 15px;
 }
 
-.h4Colors {
-    background-color: #0063cc;
-    color: white;
-    padding: 10px 15px;
-}
-
-
-.tdAlignRight {
-    text-align: right;
-}
-
-
-.col20 {
-    width: 20%;
-}
-
-.col60 {
-    width: 60%;
-}
-
-.col40 {
-    width: 40%;
-}
-
-.userDetailsDiv {
-    display: inline-block;
-    vertical-align: top;
-    width: 69.5%;
-}
-
-.msgInfo {
-    text-align: center;
-    color: red;
-    font-size: 20px;
-    width: 100%;
-}
-
-.errorlist {
-    color: red;
-    list-style: none;
-    font-style: italic;
-    margin-left: 0;
-    padding: 0;
-;
+.cashAmount{
+    width: 150px;
 }

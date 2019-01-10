@@ -1,10 +1,24 @@
 {% include  "header.html" %}
-{% if msg %}
-
+{% if error %}
+    {{ error }}
 {% else %}
 
-    <h3 class="h3 h3Colors">Cash Mashine</h3>
+    <h3 class="h3 h3Colors">Cash Withdrawal</h3>
 
+    {% if msg %}
+        <p>{{ msg }}</p>
+    {% endif %}
+
+    <p>Please enter the amount you would like to withdraw</p>
+    <form action="/" method="post" novalidate>
+        {% csrf_token %}
+        <div class="form-group cashAmount">
+            <label for="{{ form.cashamount.id_for_label }}">Cash Amount</label>
+            {{ form.cashamount }}
+            {{ form.cashamount.errors }}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 
 {% endif %}
 {% include "footer.html" %}
