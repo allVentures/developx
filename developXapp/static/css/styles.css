@@ -1,0 +1,118 @@
+html {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+
+body {
+    display: table-cell;
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background-color: #eeeeee;
+    color: #28283e;
+}
+
+.headerRooms {
+    width: 80%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.websiteHeader {
+    background-color: #003166;
+    width: 100%;
+}
+
+.formNumbers {
+    width: 90px;
+}
+
+.shortFormsFields {
+    width: 50%;
+}
+
+#logo {
+    font-family: 'Lato', sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: #eeeeee;
+    padding: 3px 0 5px 0;
+    margin: 0 10px 0 10px;
+}
+
+.mainContainer {
+    width: 80%;
+    max-width: 1280px;
+    margin: 0 auto;
+    height: 100%;
+    border-left: 2px gray solid;
+    border-right: 2px gray solid;
+    padding: 15px 15px;
+    background-color: whitesmoke;
+}
+
+table {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+
+.centerTableCol {
+    text-align: center;
+}
+
+.h3Colors {
+    background-color: #004a99;
+    color: white;
+    padding: 10px 15px;
+}
+
+.h4Colors {
+    background-color: #0063cc;
+    color: white;
+    padding: 10px 15px;
+}
+
+
+.tdAlignRight {
+    text-align: right;
+}
+
+
+.col20 {
+    width: 20%;
+}
+
+.col60 {
+    width: 60%;
+}
+
+.col40 {
+    width: 40%;
+}
+
+.userDetailsDiv {
+    display: inline-block;
+    vertical-align: top;
+    width: 69.5%;
+}
+
+.msgInfo {
+    text-align: center;
+    color: red;
+    font-size: 20px;
+    width: 100%;
+}
+
+.errorlist {
+    color: red;
+    list-style: none;
+    font-style: italic;
+    margin-left: 0;
+    padding: 0;
+;
+}
