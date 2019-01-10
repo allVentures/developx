@@ -58,3 +58,16 @@ body {
 .cashAmount{
     width: 150px;
 }
+
+.msg {
+    color: red;
+}
+
+.errorlist {
+    color: red;
+    list-style: none;
+    font-style: italic;
+    margin-left: 0;
+    padding: 0;
+;
+}

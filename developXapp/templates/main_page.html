@@ -1,12 +1,8 @@
 {% include  "header.html" %}
-{% if error %}
-    {{ error }}
-{% else %}
-
     <h3 class="h3 h3Colors">Cash Withdrawal</h3>
 
     {% if msg %}
-        <p>{{ msg }}</p>
+        <p class="msg">Function result:  {{ msg }}</p>
     {% endif %}
 
     <p>Please enter the amount you would like to withdraw</p>
@@ -20,5 +16,4 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
-{% endif %}
 {% include "footer.html" %}
